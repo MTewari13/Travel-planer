@@ -1,9 +1,11 @@
 """Cohere AI service for agent reasoning and embeddings."""
 
+import json
 import os
+import re
 import asyncio
 import logging
-from typing import Optional
+from typing import Any, Optional
 
 import cohere
 from dotenv import load_dotenv
@@ -107,6 +109,70 @@ class CohereService:
         except Exception as e:
             logger.error(f"Cohere rerank error: {e}")
             return [{"index": i, "relevance_score": 1.0 / (i + 1)} for i in range(len(options))]
+
+    async def generate_json(
+        self,
+        prompt: str,
+        fallback: Any = None,
+        model: str = "command-a-03-2025",
+        max_tokens: int = 2048,
+        temperature: float = 0.6,
+    ) -> Any:
+        """Generate structured JSON data using Cohere. Returns parsed Python object."""
+        system_prompt = (
+            "You are a travel data API. You MUST respond with ONLY valid JSON. "
+            "No markdown, no code fences, no explanations, no text before or after. "
+            "Just raw JSON."
+        )
+
+        raw = await self.generate(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            model=model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+
+        if not raw:
+            logger.warning("Cohere returned empty response for JSON generation")
+            return fallback
+
+        # Try to parse directly
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            pass
+
+        # Try to extract JSON from markdown code fences
+        fence_match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", raw, re.DOTALL)
+        if fence_match:
+            try:
+                return json.loads(fence_match.group(1).strip())
+            except json.JSONDecodeError:
+                pass
+
+        # Retry once with explicit correction
+        logger.warning("First JSON parse failed, retrying with correction prompt")
+        retry_raw = await self.generate(
+            prompt=f"Convert this into valid JSON only. No other text:\n\n{raw}",
+            system_prompt=system_prompt,
+            model=model,
+            max_tokens=max_tokens,
+            temperature=0.3,
+        )
+        if retry_raw:
+            try:
+                return json.loads(retry_raw)
+            except json.JSONDecodeError:
+                fence_match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", retry_raw, re.DOTALL)
+                if fence_match:
+                    try:
+                        return json.loads(fence_match.group(1).strip())
+                    except json.JSONDecodeError:
+                        pass
+
+        logger.error(f"Failed to parse JSON from Cohere after retry")
+        return fallback
 
 
 # Singleton instance

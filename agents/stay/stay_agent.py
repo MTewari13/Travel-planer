@@ -1,7 +1,5 @@
-"""Stay Agent — finds hotels, hostels, and resorts for a given destination."""
+"""Stay Agent — uses Cohere LLM to generate accommodation options for any destination."""
 
-import json
-import os
 from typing import Any
 
 from shared.agent_sdk.base_agent import BaseAgent
@@ -10,7 +8,11 @@ from shared.message_bus.redis_bus import RedisBus
 from shared.cohere_service import cohere_service
 
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "stays.json")
+FALLBACK_STAYS = [
+    {"name": "Standard Hotel", "type": "hotel", "price_per_night": 3000, "rating": 4.0, "distance_to_center_km": 2.0, "amenities": ["wifi", "restaurant"]},
+    {"name": "Budget Inn", "type": "hotel", "price_per_night": 1200, "rating": 3.5, "distance_to_center_km": 1.0, "amenities": ["wifi", "breakfast"]},
+    {"name": "Backpacker Hostel", "type": "hostel", "price_per_night": 500, "rating": 4.0, "distance_to_center_km": 0.8, "amenities": ["wifi", "common_area"]},
+]
 
 
 class StayAgent(BaseAgent):
@@ -18,8 +20,6 @@ class StayAgent(BaseAgent):
 
     def __init__(self, bus: RedisBus):
         super().__init__(bus)
-        with open(DATA_PATH, "r") as f:
-            self._data = json.load(f)
 
     async def handle(self, message: AgentMessage) -> Any:
         payload = message.payload
@@ -34,31 +34,56 @@ class StayAgent(BaseAgent):
             f"budget={budget}, duration={duration} nights, preferences={preferences}",
         )
 
-        # Find destination data
-        dest_key = None
-        for key in self._data:
-            if key.lower() == destination.lower():
-                dest_key = key
-                break
+        # ── Generate stay options via Cohere LLM ──
+        prompt = (
+            f"Generate exactly 6 realistic accommodation options in {destination}. "
+            f"Include a mix of luxury resorts, mid-range hotels, and budget hostels. "
+            f"For each provide: name (real or realistic hotel name), type (resort/hotel/hostel), "
+            f"price_per_night (in Indian Rupees ₹, realistic for {destination}), "
+            f"rating (1.0-5.0), distance_to_center_km (number), "
+            f"amenities (array of strings like pool, spa, wifi, restaurant, gym, beach_access).\n\n"
+            f"Return a JSON array of objects. Example format:\n"
+            f'[{{"name": "Taj Palace", "type": "hotel", "price_per_night": 5000, '
+            f'"rating": 4.5, "distance_to_center_km": 2.0, '
+            f'"amenities": ["pool", "restaurant", "wifi"]}}]\n\n'
+            f"Make prices realistic for {destination}. Sort by rating descending."
+        )
 
-        if not dest_key:
+        stays = await cohere_service.generate_json(
+            prompt=prompt,
+            fallback=FALLBACK_STAYS,
+            max_tokens=1500,
+            temperature=0.6,
+        )
+
+        # Validate we got a list
+        if not isinstance(stays, list) or len(stays) == 0:
             self.logger.warning(
                 message.correlation_id,
-                f"No stay data for '{destination}', returning defaults",
+                f"LLM returned invalid stay data, using fallback",
             )
-            dest_key = list(self._data.keys())[0]
+            stays = FALLBACK_STAYS
 
-        stays = self._data[dest_key]
+        # Ensure all stays have required fields and compute total_price
+        enriched = []
+        for stay in stays:
+            if isinstance(stay, dict) and "price_per_night" in stay and "name" in stay:
+                stay.setdefault("type", "hotel")
+                stay.setdefault("rating", 3.5)
+                stay.setdefault("distance_to_center_km", 2.0)
+                stay.setdefault("amenities", ["wifi"])
+                stay["price_per_night"] = float(stay["price_per_night"])
+                stay["rating"] = float(stay.get("rating", 3.5))
+                stay["distance_to_center_km"] = float(stay.get("distance_to_center_km", 2.0))
+                total = stay["price_per_night"] * duration
+                enriched.append({**stay, "total_price": total})
+
+        if not enriched:
+            enriched = [{**s, "total_price": s["price_per_night"] * duration} for s in FALLBACK_STAYS]
 
         # Calculate stay budget (roughly 35% of total budget)
         stay_budget = budget * 0.35
         max_per_night = stay_budget / max(duration, 1)
-
-        # Add total_price and filter
-        enriched = []
-        for stay in stays:
-            total = stay["price_per_night"] * duration
-            enriched.append({**stay, "total_price": total})
 
         affordable = [s for s in enriched if s["price_per_night"] <= max_per_night]
         if not affordable:
@@ -66,7 +91,7 @@ class StayAgent(BaseAgent):
 
         self.logger.decision(
             message.correlation_id,
-            f"Found {len(affordable)} affordable stays",
+            f"Found {len(affordable)} affordable stays from {len(enriched)} total",
             f"max_per_night={max_per_night:.0f}",
         )
 
@@ -96,7 +121,6 @@ class StayAgent(BaseAgent):
                 "Ranked stays using Cohere reranker",
             )
         else:
-            # Fallback: score by type preference, rating, and price
             def score(stay):
                 type_score = 10 if stay["type"] in preferred_types[:1] else 5 if stay["type"] in preferred_types else 0
                 return type_score + stay["rating"] - (stay["price_per_night"] / 5000)

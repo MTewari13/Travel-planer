@@ -327,7 +327,7 @@ export default function App() {
                   <input
                     className="form-input"
                     type="text"
-                    placeholder="e.g. Goa, Manali, Jaipur, Kerala"
+                    placeholder="e.g. Dubai, Tokyo, Goa, Paris"
                     value={form.destination}
                     onChange={e => setForm(f => ({ ...f, destination: e.target.value }))}
                     required
