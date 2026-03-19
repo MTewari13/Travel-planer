@@ -1,0 +1,77 @@
+{
+  "Goa": {
+    "weather": {
+      "october": {"temp_high": 33, "temp_low": 24, "rainfall_mm": 120, "humidity": 80, "condition": "End of monsoon, clearing up"},
+      "november": {"temp_high": 33, "temp_low": 22, "rainfall_mm": 30, "humidity": 65, "condition": "Perfect beach weather"},
+      "december": {"temp_high": 32, "temp_low": 20, "rainfall_mm": 10, "humidity": 55, "condition": "Peak season, sunny and dry"},
+      "january": {"temp_high": 32, "temp_low": 19, "rainfall_mm": 5, "humidity": 55, "condition": "Ideal weather, cool nights"},
+      "february": {"temp_high": 32, "temp_low": 20, "rainfall_mm": 5, "humidity": 60, "condition": "Warm and dry"},
+      "march": {"temp_high": 33, "temp_low": 23, "rainfall_mm": 5, "humidity": 65, "condition": "Getting warmer"},
+      "default": {"temp_high": 32, "temp_low": 22, "rainfall_mm": 50, "humidity": 70, "condition": "Tropical climate"}
+    },
+    "events": [
+      {"name": "Sunburn Festival", "month": "december", "description": "Asia's biggest electronic music festival"},
+      {"name": "Goa Carnival", "month": "february", "description": "Three-day street carnival with parades and music"},
+      {"name": "Christmas & New Year", "month": "december", "description": "Massive celebrations across Goa's beaches"}
+    ],
+    "crowd_level": {"peak": ["december", "january"], "moderate": ["november", "february"], "low": ["march", "april", "may"]},
+    "best_time_to_visit": "November to February",
+    "tips": ["Book early for December/January — peak tourist season", "Rent a scooter for ₹300/day to explore", "North Goa for nightlife, South Goa for peace", "Try local feni liquor"]
+  },
+  "Manali": {
+    "weather": {
+      "december": {"temp_high": 8, "temp_low": -3, "rainfall_mm": 40, "humidity": 60, "condition": "Heavy snowfall, freezing cold"},
+      "january": {"temp_high": 6, "temp_low": -5, "rainfall_mm": 50, "humidity": 65, "condition": "Peak winter, snow everywhere"},
+      "march": {"temp_high": 15, "temp_low": 2, "rainfall_mm": 60, "humidity": 55, "condition": "Spring arriving, snow melting"},
+      "may": {"temp_high": 25, "temp_low": 10, "rainfall_mm": 40, "humidity": 50, "condition": "Pleasant summer, perfect weather"},
+      "june": {"temp_high": 28, "temp_low": 14, "rainfall_mm": 80, "humidity": 70, "condition": "Monsoon approaching"},
+      "october": {"temp_high": 20, "temp_low": 5, "rainfall_mm": 20, "humidity": 45, "condition": "Autumn, clear skies, great views"},
+      "default": {"temp_high": 18, "temp_low": 5, "rainfall_mm": 40, "humidity": 55, "condition": "Mountain climate varies"}
+    },
+    "events": [
+      {"name": "Winter Carnival", "month": "january", "description": "Folk dances, music, and snow sports competitions"},
+      {"name": "Dussehra Festival", "month": "october", "description": "Unique week-long celebration with local deities"}
+    ],
+    "crowd_level": {"peak": ["may", "june", "december"], "moderate": ["october", "march"], "low": ["july", "august", "november"]},
+    "best_time_to_visit": "October to February (snow) or March to June (summer)",
+    "tips": ["Carry heavy woolens in winter", "Rohtang Pass requires a permit — book online", "Old Manali has the best cafés", "Avoid July-August due to landslides"]
+  },
+  "Jaipur": {
+    "weather": {
+      "october": {"temp_high": 35, "temp_low": 20, "rainfall_mm": 15, "humidity": 45, "condition": "Post-monsoon, pleasant evenings"},
+      "november": {"temp_high": 30, "temp_low": 14, "rainfall_mm": 5, "humidity": 35, "condition": "Perfect sightseeing weather"},
+      "december": {"temp_high": 25, "temp_low": 8, "rainfall_mm": 5, "humidity": 40, "condition": "Cool and dry, ideal for forts"},
+      "january": {"temp_high": 22, "temp_low": 7, "rainfall_mm": 5, "humidity": 45, "condition": "Chilly mornings, warm afternoons"},
+      "february": {"temp_high": 26, "temp_low": 10, "rainfall_mm": 5, "humidity": 35, "condition": "Warming up, still pleasant"},
+      "march": {"temp_high": 32, "temp_low": 16, "rainfall_mm": 5, "humidity": 30, "condition": "Getting hot"},
+      "default": {"temp_high": 30, "temp_low": 15, "rainfall_mm": 10, "humidity": 40, "condition": "Semi-arid, generally dry"}
+    },
+    "events": [
+      {"name": "Jaipur Literature Festival", "month": "january", "description": "World's largest free literary festival"},
+      {"name": "Elephant Festival", "month": "march", "description": "Colourful elephant processions and polo"},
+      {"name": "Teej Festival", "month": "august", "description": "Celebration with grand processions and cultural programs"}
+    ],
+    "crowd_level": {"peak": ["november", "december", "january", "february"], "moderate": ["october", "march"], "low": ["may", "june", "july"]},
+    "best_time_to_visit": "November to February",
+    "tips": ["Start early for Amber Fort to avoid crowds", "Auto-rickshaw prices are negotiable", "Try thali at LMB restaurant", "Visit Nahargarh Fort for sunset"]
+  },
+  "Kerala": {
+    "weather": {
+      "september": {"temp_high": 30, "temp_low": 23, "rainfall_mm": 200, "humidity": 85, "condition": "Heavy monsoon, lush green"},
+      "october": {"temp_high": 31, "temp_low": 23, "rainfall_mm": 250, "humidity": 80, "condition": "North-east monsoon"},
+      "november": {"temp_high": 31, "temp_low": 23, "rainfall_mm": 150, "humidity": 75, "condition": "Transition, frequent showers"},
+      "december": {"temp_high": 32, "temp_low": 22, "rainfall_mm": 30, "humidity": 65, "condition": "Perfect weather, peak season"},
+      "january": {"temp_high": 32, "temp_low": 22, "rainfall_mm": 15, "humidity": 60, "condition": "Dry and pleasant"},
+      "february": {"temp_high": 33, "temp_low": 23, "rainfall_mm": 15, "humidity": 60, "condition": "Warm and sunny"},
+      "march": {"temp_high": 33, "temp_low": 24, "rainfall_mm": 30, "humidity": 65, "condition": "Getting humid"},
+      "default": {"temp_high": 31, "temp_low": 23, "rainfall_mm": 80, "humidity": 70, "condition": "Tropical, humid"}
+    },
+    "events": [
+      {"name": "Onam", "month": "august", "description": "Kerala's biggest festival — boat races, feasts, flower carpets"},
+      {"name": "Cochin Carnival", "month": "december", "description": "10-day New Year celebration with parades and fireworks"}
+    ],
+    "crowd_level": {"peak": ["december", "january", "february"], "moderate": ["november", "march"], "low": ["june", "july", "august"]},
+    "best_time_to_visit": "September to March",
+    "tips": ["Book houseboat 2 weeks in advance for peak season", "Monsoon season (June-Aug) is best for ayurveda", "Carry mosquito repellent", "Try appam with stew for breakfast"]
+  }
+}

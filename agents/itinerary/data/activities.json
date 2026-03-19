@@ -1,0 +1,86 @@
+{
+  "Goa": {
+    "sightseeing": [
+      {"name": "Fort Aguada", "description": "17th-century Portuguese fort with lighthouse and sea views", "cost": 50, "duration": "2h", "category": "sightseeing"},
+      {"name": "Basilica of Bom Jesus", "description": "UNESCO World Heritage baroque church", "cost": 0, "duration": "1.5h", "category": "sightseeing"},
+      {"name": "Dudhsagar Falls", "description": "Spectacular four-tiered waterfall on the Mandovi River", "cost": 400, "duration": "6h", "category": "sightseeing"},
+      {"name": "Chapora Fort", "description": "Hilltop fort famous for Dil Chahta Hai scenes", "cost": 0, "duration": "1.5h", "category": "sightseeing"}
+    ],
+    "food": [
+      {"name": "Fisherman's Wharf Lunch", "description": "Goan seafood platter at iconic riverside restaurant", "cost": 800, "duration": "1.5h", "category": "food"},
+      {"name": "Thalassa Greek Taverna", "description": "Cliffside Greek-Goan fusion dining", "cost": 1200, "duration": "2h", "category": "food"},
+      {"name": "Street Food Tour - Panjim", "description": "Local bhaji pav, vindaloo, bebinca street food crawl", "cost": 300, "duration": "2h", "category": "food"},
+      {"name": "Britto's Baga", "description": "Beachside shack dining with Goan fish curry", "cost": 600, "duration": "1.5h", "category": "food"}
+    ],
+    "nightlife": [
+      {"name": "Tito's Lane Clubbing", "description": "Iconic Baga nightlife strip with multiple clubs", "cost": 1000, "duration": "4h", "category": "nightlife"},
+      {"name": "Club Cubana", "description": "Hillside open-air club known as 'nightclub in the sky'", "cost": 1500, "duration": "4h", "category": "nightlife"},
+      {"name": "Silent Noise Party (Palolem)", "description": "Unique headphone party on the beach", "cost": 600, "duration": "3h", "category": "nightlife"},
+      {"name": "Saturday Night Market (Arpora)", "description": "Live music, food stalls, shopping bazaar", "cost": 500, "duration": "3h", "category": "nightlife"}
+    ],
+    "adventure": [
+      {"name": "Scuba Diving (Grande Island)", "description": "Guided dive with marine life spotting", "cost": 3500, "duration": "4h", "category": "adventure"},
+      {"name": "Parasailing at Calangute", "description": "Beach parasailing with panoramic views", "cost": 800, "duration": "1h", "category": "adventure"},
+      {"name": "Kayaking in Sal River", "description": "Backwater kayaking through mangroves", "cost": 1000, "duration": "2h", "category": "adventure"}
+    ],
+    "beach": [
+      {"name": "Palolem Beach", "description": "Crescent-shaped beach perfect for swimming and relaxing", "cost": 0, "duration": "3h", "category": "beach"},
+      {"name": "Anjuna Beach", "description": "Famous hippie beach with flea market", "cost": 0, "duration": "3h", "category": "beach"},
+      {"name": "Baga Beach", "description": "Vibrant beach with water sports and nightlife", "cost": 0, "duration": "3h", "category": "beach"}
+    ]
+  },
+  "Manali": {
+    "sightseeing": [
+      {"name": "Solang Valley", "description": "Adventure hub with paragliding, zorbing and snow activities", "cost": 500, "duration": "4h", "category": "sightseeing"},
+      {"name": "Rohtang Pass", "description": "High mountain pass at 3,978m with stunning Himalayan views", "cost": 500, "duration": "6h", "category": "sightseeing"},
+      {"name": "Hadimba Temple", "description": "Ancient cave temple surrounded by cedar forest", "cost": 0, "duration": "1.5h", "category": "sightseeing"},
+      {"name": "Old Manali Village Walk", "description": "Charming village with cafés, shops, and Manu Temple", "cost": 0, "duration": "2h", "category": "sightseeing"}
+    ],
+    "food": [
+      {"name": "Café 1947", "description": "Legendary café with live music and continental food", "cost": 500, "duration": "1.5h", "category": "food"},
+      {"name": "Johnson's Café", "description": "Trout fish and European cuisine in garden setting", "cost": 700, "duration": "1.5h", "category": "food"},
+      {"name": "Drifters' Inn", "description": "Cozy café with Himachali thali and river views", "cost": 400, "duration": "1h", "category": "food"}
+    ],
+    "adventure": [
+      {"name": "River Rafting (Beas)", "description": "White water rafting on Beas river rapids", "cost": 1500, "duration": "2h", "category": "adventure"},
+      {"name": "Paragliding at Solang", "description": "Tandem paragliding with valley views", "cost": 2500, "duration": "1h", "category": "adventure"},
+      {"name": "Trekking to Jogini Falls", "description": "Moderate trek through pine forests to waterfall", "cost": 0, "duration": "4h", "category": "adventure"}
+    ]
+  },
+  "Jaipur": {
+    "sightseeing": [
+      {"name": "Amber Fort", "description": "Majestic hilltop fort with Sheesh Mahal (mirror palace)", "cost": 500, "duration": "3h", "category": "sightseeing"},
+      {"name": "Hawa Mahal", "description": "Iconic 'Palace of Winds' with 953 small windows", "cost": 200, "duration": "1.5h", "category": "sightseeing"},
+      {"name": "City Palace", "description": "Royal palace complex blending Mughal and Rajput architecture", "cost": 500, "duration": "2h", "category": "sightseeing"},
+      {"name": "Jantar Mantar", "description": "UNESCO World Heritage astronomical observatory", "cost": 200, "duration": "1.5h", "category": "sightseeing"},
+      {"name": "Nahargarh Fort", "description": "Sunset viewpoint overlooking the Pink City", "cost": 200, "duration": "2h", "category": "sightseeing"}
+    ],
+    "food": [
+      {"name": "Lassiwala (MI Road)", "description": "Iconic 70-year-old lassi shop — must-try makkhan lassi", "cost": 100, "duration": "0.5h", "category": "food"},
+      {"name": "1135 AD (Amber Fort)", "description": "Royal dining inside Amber Fort with Rajasthani cuisine", "cost": 2000, "duration": "2h", "category": "food"},
+      {"name": "Rawat Mishthan Bhandar", "description": "Famous for pyaaz kachori and Rajasthani sweets", "cost": 200, "duration": "1h", "category": "food"},
+      {"name": "Bapu Bazaar Food Walk", "description": "Street food tour — dal baati churma, ghewar, kulfi", "cost": 300, "duration": "2h", "category": "food"}
+    ],
+    "shopping": [
+      {"name": "Johari Bazaar", "description": "Historic market for gems, jewelry, and textiles", "cost": 0, "duration": "2h", "category": "shopping"},
+      {"name": "Bapu Bazaar", "description": "Colorful market for handicrafts, fabrics, mojari shoes", "cost": 0, "duration": "2h", "category": "shopping"}
+    ]
+  },
+  "Kerala": {
+    "sightseeing": [
+      {"name": "Alleppey Houseboat", "description": "Overnight cruise through the famous Kerala backwaters", "cost": 6000, "duration": "24h", "category": "sightseeing"},
+      {"name": "Munnar Tea Gardens", "description": "Lush tea plantations with factory tour and tasting", "cost": 200, "duration": "3h", "category": "sightseeing"},
+      {"name": "Fort Kochi Heritage Walk", "description": "Chinese fishing nets, spice markets, and colonial churches", "cost": 0, "duration": "3h", "category": "sightseeing"},
+      {"name": "Periyar Wildlife Sanctuary", "description": "Boat safari to spot elephants and native wildlife", "cost": 500, "duration": "4h", "category": "sightseeing"}
+    ],
+    "food": [
+      {"name": "Kerala Sadhya", "description": "Traditional 26-dish vegetarian feast on banana leaf", "cost": 400, "duration": "1.5h", "category": "food"},
+      {"name": "Kashi Art Café (Kochi)", "description": "Artisan café with Kerala filter coffee and fusion dishes", "cost": 500, "duration": "1h", "category": "food"},
+      {"name": "Seafood at Fort Kochi", "description": "Fresh catch grilled at beachside stalls", "cost": 600, "duration": "1.5h", "category": "food"}
+    ],
+    "wellness": [
+      {"name": "Ayurveda Spa Treatment", "description": "Traditional panchakarma and massage therapy", "cost": 3000, "duration": "3h", "category": "wellness"},
+      {"name": "Yoga Retreat Session", "description": "Morning yoga by the backwaters", "cost": 500, "duration": "2h", "category": "wellness"}
+    ]
+  }
+}

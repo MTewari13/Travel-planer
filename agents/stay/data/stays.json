@@ -1,0 +1,32 @@
+{
+  "Goa": [
+    {"name": "Taj Fort Aguada", "type": "resort", "price_per_night": 8000, "rating": 4.8, "distance_to_center_km": 5.0, "amenities": ["pool", "spa", "beach_access", "restaurant", "wifi"]},
+    {"name": "Novotel Goa Dona Sylvia", "type": "hotel", "price_per_night": 5500, "rating": 4.5, "distance_to_center_km": 2.5, "amenities": ["pool", "restaurant", "wifi", "gym"]},
+    {"name": "Goa Marriott Resort", "type": "resort", "price_per_night": 7000, "rating": 4.6, "distance_to_center_km": 3.0, "amenities": ["pool", "spa", "casino", "restaurant", "wifi"]},
+    {"name": "OYO Baga Beach", "type": "hotel", "price_per_night": 1200, "rating": 3.5, "distance_to_center_km": 1.0, "amenities": ["wifi", "breakfast"]},
+    {"name": "Zostel Goa", "type": "hostel", "price_per_night": 500, "rating": 4.2, "distance_to_center_km": 0.8, "amenities": ["wifi", "common_area", "kitchen"]},
+    {"name": "The Park Calangute", "type": "hotel", "price_per_night": 3500, "rating": 4.3, "distance_to_center_km": 1.5, "amenities": ["pool", "restaurant", "wifi"]},
+    {"name": "Backpacker Panda", "type": "hostel", "price_per_night": 400, "rating": 4.0, "distance_to_center_km": 1.2, "amenities": ["wifi", "common_area"]}
+  ],
+  "Manali": [
+    {"name": "The Himalayan", "type": "resort", "price_per_night": 6000, "rating": 4.7, "distance_to_center_km": 4.0, "amenities": ["spa", "restaurant", "mountain_view", "wifi"]},
+    {"name": "Johnson Lodge", "type": "hotel", "price_per_night": 3500, "rating": 4.4, "distance_to_center_km": 1.0, "amenities": ["restaurant", "wifi", "parking"]},
+    {"name": "Zostel Manali", "type": "hostel", "price_per_night": 600, "rating": 4.3, "distance_to_center_km": 0.5, "amenities": ["wifi", "common_area", "café"]},
+    {"name": "Manali Inn", "type": "hotel", "price_per_night": 1500, "rating": 3.8, "distance_to_center_km": 0.8, "amenities": ["wifi", "breakfast", "heater"]},
+    {"name": "Snow Valley Resorts", "type": "resort", "price_per_night": 5000, "rating": 4.5, "distance_to_center_km": 3.0, "amenities": ["spa", "pool", "restaurant", "wifi"]}
+  ],
+  "Jaipur": [
+    {"name": "Rambagh Palace", "type": "resort", "price_per_night": 15000, "rating": 4.9, "distance_to_center_km": 5.0, "amenities": ["pool", "spa", "restaurant", "heritage", "wifi"]},
+    {"name": "ITC Rajputana", "type": "hotel", "price_per_night": 6000, "rating": 4.6, "distance_to_center_km": 2.0, "amenities": ["pool", "spa", "restaurant", "wifi"]},
+    {"name": "Hotel Pearl Palace", "type": "hotel", "price_per_night": 1800, "rating": 4.5, "distance_to_center_km": 1.5, "amenities": ["wifi", "restaurant", "rooftop"]},
+    {"name": "Zostel Jaipur", "type": "hostel", "price_per_night": 450, "rating": 4.2, "distance_to_center_km": 1.0, "amenities": ["wifi", "common_area", "kitchen"]},
+    {"name": "Moustache Hostel", "type": "hostel", "price_per_night": 500, "rating": 4.3, "distance_to_center_km": 0.8, "amenities": ["wifi", "rooftop", "common_area"]}
+  ],
+  "Kerala": [
+    {"name": "Kumarakom Lake Resort", "type": "resort", "price_per_night": 12000, "rating": 4.8, "distance_to_center_km": 6.0, "amenities": ["pool", "spa", "ayurveda", "houseboat", "wifi"]},
+    {"name": "Taj Malabar", "type": "hotel", "price_per_night": 7000, "rating": 4.6, "distance_to_center_km": 3.0, "amenities": ["pool", "restaurant", "harbor_view", "wifi"]},
+    {"name": "Fragrant Nature Kochi", "type": "hotel", "price_per_night": 4000, "rating": 4.4, "distance_to_center_km": 2.0, "amenities": ["pool", "restaurant", "wifi"]},
+    {"name": "Zostel Alleppey", "type": "hostel", "price_per_night": 550, "rating": 4.3, "distance_to_center_km": 1.0, "amenities": ["wifi", "common_area", "backwater_view"]},
+    {"name": "Vedanta Wake Up Kochi", "type": "hotel", "price_per_night": 1200, "rating": 3.9, "distance_to_center_km": 1.5, "amenities": ["wifi", "breakfast"]}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "Goa": {
+    "flights": [
+      {"mode": "flight", "provider": "IndiGo", "departure": "06:00", "arrival": "08:30", "duration_hours": 2.5, "price": 4500, "rating": 4.2},
+      {"mode": "flight", "provider": "Air India", "departure": "10:00", "arrival": "12:30", "duration_hours": 2.5, "price": 5500, "rating": 4.0},
+      {"mode": "flight", "provider": "SpiceJet", "departure": "14:00", "arrival": "16:30", "duration_hours": 2.5, "price": 3800, "rating": 3.8}
+    ],
+    "trains": [
+      {"mode": "train", "provider": "Rajdhani Express", "departure": "16:30", "arrival": "06:00+1", "duration_hours": 13.5, "price": 1800, "rating": 4.5},
+      {"mode": "train", "provider": "Goa Express", "departure": "15:00", "arrival": "08:00+1", "duration_hours": 17.0, "price": 900, "rating": 3.5},
+      {"mode": "train", "provider": "Konkan Kanya", "departure": "11:00", "arrival": "03:00+1", "duration_hours": 16.0, "price": 1200, "rating": 4.0}
+    ],
+    "buses": [
+      {"mode": "bus", "provider": "VRL Travels", "departure": "18:00", "arrival": "08:00+1", "duration_hours": 14.0, "price": 1200, "rating": 4.0},
+      {"mode": "bus", "provider": "Paulo Travels", "departure": "20:00", "arrival": "10:00+1", "duration_hours": 14.0, "price": 1500, "rating": 4.3},
+      {"mode": "bus", "provider": "Neeta Travels", "departure": "19:00", "arrival": "09:00+1", "duration_hours": 14.0, "price": 800, "rating": 3.5}
+    ]
+  },
+  "Manali": {
+    "flights": [
+      {"mode": "flight", "provider": "IndiGo (to Kullu)", "departure": "07:00", "arrival": "08:30", "duration_hours": 1.5, "price": 5000, "rating": 4.0},
+      {"mode": "flight", "provider": "Air India (to Kullu)", "departure": "11:00", "arrival": "12:30", "duration_hours": 1.5, "price": 6000, "rating": 4.2}
+    ],
+    "trains": [
+      {"mode": "train", "provider": "Shatabdi (to Chandigarh)", "departure": "07:40", "arrival": "11:30", "duration_hours": 3.8, "price": 800, "rating": 4.5},
+      {"mode": "train", "provider": "Kalka Mail", "departure": "21:30", "arrival": "06:00+1", "duration_hours": 8.5, "price": 500, "rating": 3.8}
+    ],
+    "buses": [
+      {"mode": "bus", "provider": "HRTC Volvo", "departure": "17:00", "arrival": "07:00+1", "duration_hours": 14.0, "price": 1200, "rating": 4.0},
+      {"mode": "bus", "provider": "HPTDC Deluxe", "departure": "18:30", "arrival": "08:00+1", "duration_hours": 13.5, "price": 1500, "rating": 4.2}
+    ]
+  },
+  "Jaipur": {
+    "flights": [
+      {"mode": "flight", "provider": "IndiGo", "departure": "06:30", "arrival": "07:30", "duration_hours": 1.0, "price": 3200, "rating": 4.2},
+      {"mode": "flight", "provider": "Vistara", "departure": "09:00", "arrival": "10:00", "duration_hours": 1.0, "price": 4500, "rating": 4.6}
+    ],
+    "trains": [
+      {"mode": "train", "provider": "Shatabdi Express", "departure": "06:00", "arrival": "10:30", "duration_hours": 4.5, "price": 700, "rating": 4.5},
+      {"mode": "train", "provider": "Ajmer Shatabdi", "departure": "06:15", "arrival": "10:40", "duration_hours": 4.4, "price": 650, "rating": 4.3},
+      {"mode": "train", "provider": "Double Decker", "departure": "06:05", "arrival": "11:00", "duration_hours": 5.0, "price": 500, "rating": 4.0}
+    ],
+    "buses": [
+      {"mode": "bus", "provider": "RSRTC Volvo", "departure": "22:00", "arrival": "04:30+1", "duration_hours": 6.5, "price": 600, "rating": 4.0},
+      {"mode": "bus", "provider": "Garuda Plus", "departure": "23:00", "arrival": "05:30+1", "duration_hours": 6.5, "price": 800, "rating": 4.3}
+    ]
+  },
+  "Kerala": {
+    "flights": [
+      {"mode": "flight", "provider": "IndiGo (to Kochi)", "departure": "05:30", "arrival": "08:30", "duration_hours": 3.0, "price": 5000, "rating": 4.2},
+      {"mode": "flight", "provider": "Air India (to Trivandrum)", "departure": "09:00", "arrival": "12:30", "duration_hours": 3.5, "price": 6500, "rating": 4.0}
+    ],
+    "trains": [
+      {"mode": "train", "provider": "Kerala Express", "departure": "11:25", "arrival": "18:00+1", "duration_hours": 30.5, "price": 1500, "rating": 4.0},
+      {"mode": "train", "provider": "Rajdhani Express", "departure": "10:55", "arrival": "14:00+1", "duration_hours": 27.0, "price": 2800, "rating": 4.5}
+    ],
+    "buses": [
+      {"mode": "bus", "provider": "KSRTC Scania", "departure": "15:00", "arrival": "15:00+2", "duration_hours": 48.0, "price": 2000, "rating": 3.5}
+    ]
+  }
+}
