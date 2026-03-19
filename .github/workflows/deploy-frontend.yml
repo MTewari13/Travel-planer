@@ -32,16 +32,10 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Build and push Docker image
+      - name: Deploy Frontend to Cloud Run
         run: |
           cd frontend
-          gcloud builds submit --tag gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }} \
-            --build-arg VITE_API_BASE=https://travel-planner-api-r5xtqhseva-uc.a.run.app \
-            --build-arg VITE_GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
-
-      - name: Deploy to Cloud Run
-        run: |
           gcloud run deploy ${{ env.SERVICE_NAME }} \
-            --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }} \
+            --source . \
             --region ${{ env.REGION }} \
             --allow-unauthenticated
